@@ -1,15 +1,20 @@
 on chat:
 	if message contains "bonjour" or "Bonjour":
 		wait 3 seconds
-		broadcast "&8[&c!] &5[&dPaysan&5]&7 lajoueuse13 &6» &f&oBonjour %player% !"
+		broadcast "&8[&c!] &c✵ &ePyjbot &5[&dPaysan&5]&7 lajoueuse13 &6» &f&oBonjour %player% !"
 		wait 2 seconds
-		broadcast "&8[&c!] &5[&dPaysan&5]&7 miffun &6» &f&oCoucou %player%"
+		broadcast "&8[&c!] &8✦ &ePyjbot &5[&dPaysan&5]&7 miffun &6» &f&oCoucou %player%"
 		wait 1 seconds
-		broadcast "&8[&c!] &5[&dPaysan&5]&7 akatzuki5 &6» &f&oSalut &2^ᴗ^"
+		broadcast "&8[&c!] &8✦ &ePyjbot &5[&dPaysan&5]&7 akatzuki5 &6» &f&oSalut &2^ᴗ^"
+	else if message contains "qui recrute ?":
+		wait 2 seconds
+		broadcast "&8[&c!] &c✵ &ePyjbot &5[&dPaysan&5]&7 lajoueuse13 &6» &f&oDésolé %player%, mais on est au complet :/"
+		wait 1 seconds
+		broadcast "&8[&c!] &8✦ &ePyjbot &5[&dPaysan&5]&7 zPzPlayer &6» &f&oYep déso :/"
 on first join:
 	wait 7 seconds
-	broadcast "&8[&c!] &5[&dPaysan&5]&7 zPzPlayer &6» &f&oBienvenue %player% et bon jeu sur OpsyCraft !"
+	broadcast "&8[&c!] &8✦ &ePyjbot &5[&dPaysan&5]&7 zPzPlayer &6» &f&oBienvenue %player% et bon jeu sur OpsyCraft !"
 	wait 2 seconds
-	broadcast "&8[&c!] &5[&dPaysan&5]&7 lajoueuse13 &6» &f&oHey bienvenue %player% !"
+	broadcast "&8[&c!] &c✵ &ePyjbot &5[&dPaysan&5]&7 lajoueuse13 &6» &f&oHey bienvenue %player% !"
 	wait 1 seconds
-	broadcast "&8[&c!] &5[&dPaysan&5]&7 Piedrops &6» &f&oBienvenue &2^ᴗ^"
+	broadcast "&8[&c!] &8✦ &ePyjbot &5[&dPaysan&5]&7 Piedrops &6» &f&oBienvenue &2^ᴗ^"
