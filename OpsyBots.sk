@@ -1,20 +1,113 @@
+#===================================================================================================================================#
+#===================================================================================================================================#
+
+#====================== License =======================#
+#                 Version: 0.1 - BETA                  #
+#                   Author: ZeTioZ                     #
+#   OpsyBots © by ZeTioZ is licensed under a Creative  #
+#     Commons Attribution - Non Commercial Usage -     #
+#           ShareAlike 4.0 Unported License            #
+#====================== License =======================#
+
+#===================== Nota Bene =====================#
+# You want to modify the order of the help command ?  #
+#     Go on the line ### and change the order of      #
+#             The options. %nl% = New Line.           #
+#                        Enjoy !                      #
+#===================== Nota Bene =====================#
+
+#========================= Options Section =========================#
+options:
+  #================ Configuration ================#
+	#===== Options =====#
+	database: opsybots
+	developer.mode: true
+	permission.debuger: true
+	skript.path: %script%
+	#===== Options =====#
+
+	#===== Commands =====#
+	opsybots.main: opsybots
+	opsybots.aliases: bots, bot
+	opsybots.reload: reload
+	#===== Commands =====#
+
+	#===== Permissions =====#
+	permission.reload: opsybots.reload
+	#===== Permissions =====#
+  #================ Configuration ================#
+
+  #================ Messages ================#
+  	#===== Commands Messages =====#
+	prefix: &6[&dOpsyBots&6]
+	sava: "sava ?" or "sa va ?" or "çava ?" or "ça va ?" or "Comment ça va ?" or "Comment allez-vous ?"
+	bonjour: "bonjour" or "Bonjour" or "salut" or "Salut"
+	bonsoir: "bonsoir" or "Bonsoir"
+	recrute: "qui" and "recrute"
+	pvpbox: "qui" and "pvpbox"
+	serveur: "faire" and "quoi" and "serveur"
+	version: &6OpsyBots V1.0
+	error.permission: &cVous n'avez pas la permission de faire cela.
+	error.permission.nd1: &cVous avez besoin de la permission
+	error.permission.nd2: &cpour exécuter cette commande.
+  	#===== Commands Messages =====#
+
+	#===== Help Messages =====#
+
+	#===== Help Messages =====#
+  #================ Messages ================#
+#========================= Options Section =========================#
+
+command /{@opsybots.main} [<text>]:
+	aliases: {@opsybots.aliases}
+	trigger:
+		if arg 1 is set:
+			if arg 1 is "{@opsybots.reload}":
+				if player has permission "{@permission.reload}":
+					execute player command "/sk reload {@skript.path}"
+				else:
+					send "{@prefix} {@error.permission}" to player
+					if {@permission.debuger} is true:
+						send "{@prefix} {@error.permission.nd1} {@permission.reload} {@error.permission.nd2}" to player
+			else:
+				send "{@prefix} {@version}" to player
+		else:
+			send "{@prefix} {@version}" to player
 on chat:
-	if message contains "bonjour" or "Bonjour":
+	if message contains {@bonjour}:
 		wait 3 seconds
-		broadcast "&8[&c!] &c✵ &ePyjbot &5[&dPaysan&5]&7 lajoueuse13 &6» &f&oBonjour %player% !"
+		broadcast "&8[&c!&8] &c✵ &ePyjbot &5[&dPaysan&5]&7 lajoueuse13 &6» &f&oBonjour %player% !"
 		wait 2 seconds
-		broadcast "&8[&c!] &8✦ &ePyjbot &5[&dPaysan&5]&7 miffun &6» &f&oCoucou %player%"
+		broadcast "&8[&c!&8] &8✦ &ePyjbot &5[&dPaysan&5]&7 miffun &6» &f&oCoucou %player%"
 		wait 1 seconds
-		broadcast "&8[&c!] &8✦ &ePyjbot &5[&dPaysan&5]&7 akatzuki5 &6» &f&oSalut &2^ᴗ^"
-	else if message contains "qui recrute ?":
+		broadcast "&8[&c!&8] &8✦ &ePyjbot &5[&dPaysan&5]&7 akatzuki5 &6» &f&oSalut &2^ᴗ^"
+	else if message contains {@bonsoir}:
+		wait 3 seconds
+		broadcast "&8[&c!&8] &8✦ &ePyjbot &5[&dPaysan&5]&7 miffun &6» &f&oBonsoir %player% &2^ᴗ^"
+		wait 1 seconds
+		broadcast "&8[&c!&8] &c✵ &ePyjbot &5[&dPaysan&5]&7 Adviser &6» &f&oCoucou %player%"
+	else if message contains {@recrute}:
 		wait 2 seconds
-		broadcast "&8[&c!] &c✵ &ePyjbot &5[&dPaysan&5]&7 lajoueuse13 &6» &f&oDésolé %player%, mais on est au complet :/"
+		broadcast "&8[&c!&8] &c✵ &ePyjbot &5[&dPaysan&5]&7 lajoueuse13 &6» &f&oDésolé %player%, mais on est au complet :/"
 		wait 1 seconds
-		broadcast "&8[&c!] &8✦ &ePyjbot &5[&dPaysan&5]&7 zPzPlayer &6» &f&oYep déso :/"
+		broadcast "&8[&c!&8] &8✦ &ePyjbot &5[&dPaysan&5]&7 zPzPlayer &6» &f&oYep déso :/"
+	else if message contains {@pvpbox}:
+		wait 2 seconds
+		broadcast "&8[&c!&8] &c✵ &ePyjbot &5[&dPaysan&5]&7 lajoueuse13 &6» &f&oNan déso, la flemme, je suis en train de farmer de l'OpsyX"
+	else if message contains {@serveur}:
+		wait 2 seconds
+		broadcast "&8[&c!&8] &c✵ &ePyjbot &5[&dPaysan&5]&7 lajoueuse13 &6» &f&oC'est un pvp/faction, tu fais ta base et tu mines pour avoir de l'OpsyX"
+		wait 2 seconds
+		broadcast "&8[&c!&8] &c✵ &ePyjbot &5[&dPaysan&5]&7 Curiosuh &6» &f&oAprès tu peux faire /help pour avoir toutes les commandes dispo"
+	else if message contains {@sava}:
+		wait 2 seconds
+		broadcast "&8[&c!&8] &c✵ &ePyjbot &5[&dPaysan&5]&7 Curiosuh &6» &f&oMoi ça va super ! Et toi %player% ?"
+		wait 4 seconds
+		broadcast "&8[&c!&8] &c✵ &ePyjbot &5[&dPaysan&5]&7 zPzPlayer &6» &f&oJe suis en forme et prêt à miner pour de l'OpsyX !"
 on first join:
-	wait 7 seconds
-	broadcast "&8[&c!] &8✦ &ePyjbot &5[&dPaysan&5]&7 zPzPlayer &6» &f&oBienvenue %player% et bon jeu sur OpsyCraft !"
+	wait 5 seconds
+	broadcast "&8[&c!&8] &8✦ &ePyjbot &5[&dPaysan&5]&7 zPzPlayer &6» &f&oBienvenue %player% et bon jeu sur OpsyCraft !"
 	wait 2 seconds
-	broadcast "&8[&c!] &c✵ &ePyjbot &5[&dPaysan&5]&7 lajoueuse13 &6» &f&oHey bienvenue %player% !"
+	broadcast "&8[&c!&8] &c✵ &ePyjbot &5[&dPaysan&5]&7 lajoueuse13 &6» &f&oHey bienvenue %player% !"
 	wait 1 seconds
-	broadcast "&8[&c!] &8✦ &ePyjbot &5[&dPaysan&5]&7 Piedrops &6» &f&oBienvenue &2^ᴗ^"
+	broadcast "&8[&c!&8] &8✦ &ePyjbot &5[&dPaysan&5]&7 Piedrops &6» &f&oBienvenue &2^ᴗ^"
