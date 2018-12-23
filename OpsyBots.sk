@@ -1,0 +1,15 @@
+on chat:
+	if message contains "bonjour" or "Bonjour":
+		wait 3 seconds
+		broadcast "&8[&c!] &5[&dPaysan&5]&7 lajoueuse13 &6» Bonjour %player% !"
+		wait 2 seconds
+		broadcast "&8[&c!] &5[&dPaysan&5]&7 miffun &6» Coucou %player%"
+		wait 1 seconds
+		broadcast "&8[&c!] &5[&dPaysan&5]&7 akatzuki5 &6» Salut &2^ᴗ^"
+on first join:
+	wait 7 seconds
+	broadcast "&8[&c!] &5[&dPaysan&5]&7 zPzPlayer &6» &f&oBienvenue %player% et bon jeu sur OpsyCraft !"
+	wait 2 seconds
+	broadcast "&8[&c!] &5[&dPaysan&5]&7 lajoueuse13 &6» &f&oHey bienvenue %player% !"
+	wait 1 seconds
+	broadcast "&8[&c!] &5[&dPaysan&5]&7 Piedrops &6» &f&oBienvenue &2^ᴗ^"
