@@ -75,35 +75,54 @@ command /{@opsybots.main} [<text>]:
 			send "{@prefix} {@version}" to player
 on chat:
 	if message contains {@bonjour}:
-		wait 3 seconds
-		broadcast "&8[&c!&8] &c✵ &ePyjbot &5[&dPaysan&5]&7 lajoueuse13 &6» &f&oBonjour %player% !"
-		wait 2 seconds
-		broadcast "&8[&c!&8] &8✦ &ePyjbot &5[&dPaysan&5]&7 miffun &6» &f&oCoucou %player%"
-		wait 1 seconds
-		broadcast "&8[&c!&8] &8✦ &ePyjbot &5[&dPaysan&5]&7 akatzuki5 &6» &f&oSalut &2^ᴗ^"
+		if {{@database}::active} is not set:
+			set {{@database}::active} to true
+			wait 3 seconds
+			broadcast "&8[&c!&8] &c✵ &ePyjbot &5[&dPaysan&5]&7 lajoueuse13 &6» &f&oBonjour %player% !"
+			wait 2 seconds
+			broadcast "&8[&c!&8] &8✦ &ePyjbot &5[&dPaysan&5]&7 miffun &6» &f&oCoucou %player%"
+			wait 1 seconds
+			broadcast "&8[&c!&8] &8✦ &ePyjbot &5[&dPaysan&5]&7 akatzuki5 &6» &f&oSalut &2^ᴗ^"
+			wait 30 seconds
+			delete {{@database}::active}
 	else if message contains {@bonsoir}:
-		wait 3 seconds
-		broadcast "&8[&c!&8] &8✦ &ePyjbot &5[&dPaysan&5]&7 miffun &6» &f&oBonsoir %player% &2^ᴗ^"
-		wait 1 seconds
-		broadcast "&8[&c!&8] &c✵ &ePyjbot &5[&dPaysan&5]&7 Adviser &6» &f&oCoucou %player%"
+		if {{@database}::active} is not set:
+			set {{@database}::active} to true
+			wait 3 seconds
+			broadcast "&8[&c!&8] &8✦ &ePyjbot &5[&dPaysan&5]&7 miffun &6» &f&oBonsoir %player% &2^ᴗ^"
+			wait 1 seconds
+			broadcast "&8[&c!&8] &c✵ &ePyjbot &5[&dPaysan&5]&7 Adviser &6» &f&oCoucou %player%"
+			delete {{@database}::active}
 	else if message contains {@recrute}:
-		wait 2 seconds
-		broadcast "&8[&c!&8] &c✵ &ePyjbot &5[&dPaysan&5]&7 lajoueuse13 &6» &f&oDésolé %player%, mais on est au complet :/"
-		wait 1 seconds
-		broadcast "&8[&c!&8] &8✦ &ePyjbot &5[&dPaysan&5]&7 zPzPlayer &6» &f&oYep déso :/"
+		if {{@database}::active} is not set:
+			set {{@database}::active} to true
+			wait 2 seconds
+			broadcast "&8[&c!&8] &c✵ &ePyjbot &5[&dPaysan&5]&7 lajoueuse13 &6» &f&oDésolé %player%, mais on est au complet :/"
+			wait 1 seconds
+			broadcast "&8[&c!&8] &8✦ &ePyjbot &5[&dPaysan&5]&7 zPzPlayer &6» &f&oYep déso :/"
+			delete {{@database}::active}
 	else if message contains {@pvpbox}:
-		wait 2 seconds
-		broadcast "&8[&c!&8] &c✵ &ePyjbot &5[&dPaysan&5]&7 lajoueuse13 &6» &f&oNan déso, la flemme, je suis en train de farmer de l'OpsyX"
+		if {{@database}::active} is not set:
+			set {{@database}::active} to true
+			wait 2 seconds
+			broadcast "&8[&c!&8] &c✵ &ePyjbot &5[&dPaysan&5]&7 lajoueuse13 &6» &f&oNan déso, la flemme, je suis en train de farmer de l'OpsyX"
+			delete {{@database}::active}
 	else if message contains {@serveur}:
-		wait 2 seconds
-		broadcast "&8[&c!&8] &c✵ &ePyjbot &5[&dPaysan&5]&7 lajoueuse13 &6» &f&oC'est un pvp/faction, tu fais ta base et tu mines pour avoir de l'OpsyX"
-		wait 2 seconds
-		broadcast "&8[&c!&8] &c✵ &ePyjbot &5[&dPaysan&5]&7 Curiosuh &6» &f&oAprès tu peux faire /help pour avoir toutes les commandes dispo"
+		if {{@database}::active} is not set:
+			set {{@database}::active} to true
+			wait 2 seconds
+			broadcast "&8[&c!&8] &c✵ &ePyjbot &5[&dPaysan&5]&7 lajoueuse13 &6» &f&oC'est un pvp/faction, tu fais ta base et tu mines pour avoir de l'OpsyX"
+			wait 2 seconds
+			broadcast "&8[&c!&8] &c✵ &ePyjbot &5[&dPaysan&5]&7 Curiosuh &6» &f&oAprès tu peux faire /help pour avoir toutes les commandes dispo"
+			delete {{@database}::active}
 	else if message contains {@sava}:
-		wait 2 seconds
-		broadcast "&8[&c!&8] &c✵ &ePyjbot &5[&dPaysan&5]&7 Curiosuh &6» &f&oMoi ça va super ! Et toi %player% ?"
-		wait 4 seconds
-		broadcast "&8[&c!&8] &c✵ &ePyjbot &5[&dPaysan&5]&7 zPzPlayer &6» &f&oJe suis en forme et prêt à miner pour de l'OpsyX !"
+		if {{@database}::active} is not set:
+			set {{@database}::active} to true
+			wait 2 seconds
+			broadcast "&8[&c!&8] &c✵ &ePyjbot &5[&dPaysan&5]&7 Curiosuh &6» &f&oMoi ça va super ! Et toi %player% ?"
+			wait 4 seconds
+			broadcast "&8[&c!&8] &c✵ &ePyjbot &5[&dPaysan&5]&7 zPzPlayer &6» &f&oJe suis en forme et prêt à miner pour de l'OpsyX !"
+			delete {{@database}::active}
 on first join:
 	wait 5 seconds
 	broadcast "&8[&c!&8] &8✦ &ePyjbot &5[&dPaysan&5]&7 zPzPlayer &6» &f&oBienvenue %player% et bon jeu sur OpsyCraft !"
